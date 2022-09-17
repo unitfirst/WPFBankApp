@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace WPFBankApp.Core.Commands.Base
+namespace WPFBankApp.General.Core.Commands.Base
 {
     public abstract class Command : ICommand
     {

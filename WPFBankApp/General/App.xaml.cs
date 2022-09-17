@@ -1,4 +1,4 @@
-﻿namespace WPFBankApp
+﻿namespace WPFBankApp.General
 {
     /// <summary>
     /// Interaction logic for App.xaml

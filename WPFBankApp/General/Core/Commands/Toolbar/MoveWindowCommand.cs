@@ -1,7 +1,7 @@
 ﻿using System.Windows;
-using WPFBankApp.Core.Commands.Base;
+using WPFBankApp.General.Core.Commands.Base;
 
-namespace WPFBankApp.Core.Commands.Toolbar
+namespace WPFBankApp.General.Core.Commands.Toolbar
 {
     public class MoveWindowCommand : Command
     {

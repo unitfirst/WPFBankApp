@@ -1,7 +1,7 @@
 ﻿using System;
-using WPFBankApp.Core.Commands.Base;
+using WPFBankApp.General.Core.Commands.Base;
 
-namespace WPFBankApp.Core.Commands
+namespace WPFBankApp.AppFiles.Core.Commands
 {
     internal class RelayCommand : Command
     {

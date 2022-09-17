@@ -1,9 +1,9 @@
 ﻿using System.Windows;
-using WPFBankApp.Core.Commands.Base;
+using WPFBankApp.General.Core.Commands.Base;
 
-namespace WPFBankApp.Core.Commands.Toolbar
+namespace WPFBankApp.General.Core.Commands.Toolbar
 {
-    public class MaximizeWindowCommand : Command
+    public class MinimizeWindowCommand : Command
     {
         public override bool CanExecute(object parameter) => true;
 
@@ -11,9 +11,9 @@ namespace WPFBankApp.Core.Commands.Toolbar
         {
             foreach (var item in Application.Current.Windows)
             {
-                ((Window)item).WindowState = ((Window)item).WindowState == WindowState.Maximized
+                ((Window)item).WindowState = ((Window)item).WindowState == WindowState.Minimized
                     ? WindowState.Normal
-                    : WindowState.Maximized;
+                    : WindowState.Minimized;
             }
         }
     }
