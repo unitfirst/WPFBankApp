@@ -4,7 +4,7 @@ using System.Windows.Data;
 using WPFBankApp.General.MVVM.Model.Employees;
 using WPFBankApp.General.MVVM.Model.Employees.Base;
 
-namespace WPFBankApp.General.Converters
+namespace WPFBankApp.General.Core.Converters
 {
     public class UserModeToString : IValueConverter
     {
