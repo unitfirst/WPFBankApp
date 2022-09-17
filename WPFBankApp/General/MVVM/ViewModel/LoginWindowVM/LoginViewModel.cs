@@ -3,6 +3,7 @@ using System.Windows.Input;
 using WPFBankApp.AppFiles.Core.Commands;
 using WPFBankApp.General.MVVM.Model.Employees;
 using WPFBankApp.General.MVVM.Model.Employees.Base;
+using WPFBankApp.General.MVVM.View.MainWindowView;
 using WPFBankApp.General.MVVM.ViewModel.Base;
 using WPFBankApp.General.MVVM.ViewModel.MainWindowVM;
 
