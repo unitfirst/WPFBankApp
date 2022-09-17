@@ -1,0 +1,174 @@
+﻿<UserControl x:Class="WPFBankApp.General.MVVM.View.MainWindowView.Views.AccountsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:WPFBankApp.General.MVVM.View.MainWindowView.Views"
+             mc:Ignorable="d"
+             d:DesignHeight="450"
+             d:DesignWidth="800"
+             Background="{StaticResource Color.Main.Onyx.Dark}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="60" />
+            <RowDefinition />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="100" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Row="1"
+                    Grid.Column="0"
+                    Orientation="Horizontal"
+                    VerticalAlignment="Top">
+
+            <TextBlock Style="{StaticResource Title.Style}"
+                       Text="Accounts" />
+
+            <TextBox Style="{StaticResource TextBox.Search.Style}"
+                     Margin="20 3 0 0">
+            </TextBox>
+
+        </StackPanel>
+
+        <Grid Grid.Row="2"
+              Margin="40 0 40 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2.5*" />
+                <ColumnDefinition Width="0.1*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="0"
+                    Background="{DynamicResource Color.DataGrid.Static.Background}"
+                    CornerRadius="5" />
+
+            <DataGrid x:Name="DgAccounts"
+                      ItemsSource="{Binding Accounts}"
+                      SelectedItem="{Binding SelectedAccount}"
+                      ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle}"
+                      RowStyle="{DynamicResource DataGridRowStyle}"
+                      CellStyle="{DynamicResource DataGridCellStyle}"
+                      ScrollViewer.CanContentScroll="True"
+                      ScrollViewer.VerticalScrollBarVisibility="Auto">
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn x:Name="AddTimeCol"
+                                        Visibility="Collapsed"
+                                        Header="Added"
+                                        Width="100*"
+                                        MinWidth="100"
+                                        CanUserSort="True" />
+
+                    <DataGridTextColumn x:Name="LastUpdateCol"
+                                        Visibility="Collapsed"
+                                        Header="Edited"
+                                        Width="100*"
+                                        MinWidth="100"
+                                        IsReadOnly="True" />
+
+                    <DataGridTextColumn x:Name="IdCol"
+                                        Header="ID"
+                                        Width="60*"
+                                        MinWidth="60"
+                                        IsReadOnly="True"
+                                        CanUserSort="True"
+                                        Binding="{Binding Id}" />
+
+                    <DataGridTextColumn x:Name="FirstNameCol"
+                                        Header="First name"
+                                        Width="180*"
+                                        MinWidth="180"
+                                        IsReadOnly="True"
+                                        CanUserSort="True"
+                                        Binding="{Binding FirstName}" />
+
+                    <DataGridTextColumn x:Name="LastNameCol"
+                                        Header="Last name"
+                                        Width="180*"
+                                        MinWidth="180"
+                                        IsReadOnly="True"
+                                        CanUserSort="True"
+                                        Binding="{Binding LastName}" />
+
+                    <DataGridTextColumn x:Name="PhoneCol"
+                                        Header="Phone"
+                                        Width="100*"
+                                        MinWidth="100"
+                                        IsReadOnly="True"
+                                        CanUserSort="True"
+                                        Binding="{Binding PhoneNumber}" />
+
+                    <DataGridTextColumn x:Name="PassportCol"
+                                        Header="Passport"
+                                        Width="100*"
+                                        MinWidth="100"
+                                        IsReadOnly="True"
+                                        CanUserSort="True"
+                                        Binding="{Binding Passport}" />
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <Grid Grid.Column="2"
+                  Visibility="Visible"
+                  Height="Auto">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition Height="0.2*" />
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0"
+                            Orientation="Vertical">
+
+                    <TextBlock Style="{StaticResource SubTitle.Style}"
+                               Text="First name" />
+                    <TextBox Style="{StaticResource TextBox.Default.Style}"
+                             x:Name="tbFirstName"
+                             Text="{Binding SelectedAccount.FirstName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+
+                    <TextBlock Style="{StaticResource SubTitle.Style}"
+                               Text="Last name" />
+                    <TextBox Style="{StaticResource TextBox.Default.Style}"
+                             x:Name="tbLastName"
+                             Text="{Binding SelectedAccount.LastName, UpdateSourceTrigger=PropertyChanged}" />
+
+                    <TextBlock Style="{StaticResource SubTitle.Style}"
+                               Text="Phone number" />
+                    <TextBox Style="{StaticResource TextBox.Default.Style}"
+                             x:Name="tbPhoneNumber"
+                             Text="{Binding SelectedAccount.PhoneNumber, UpdateSourceTrigger=PropertyChanged}" />
+
+                    <TextBlock Style="{StaticResource SubTitle.Style}"
+                               Text="Passport" />
+                    <TextBox Style="{StaticResource TextBox.Default.Style}"
+                             x:Name="tbPassport"
+                             Text="{Binding SelectedAccount.Passport, UpdateSourceTrigger=PropertyChanged}" />
+
+                    <StackPanel Orientation="Horizontal"
+                                VerticalAlignment="Bottom"
+                                HorizontalAlignment="Left"
+                                Margin="-4 40 0 0">
+
+                        <Button x:Name="ApplyButton"
+                                Style="{StaticResource Button.Default.Style}"
+                                Content="Apply"
+                                Command="{Binding ApplyCommand}"
+                                CommandParameter="{Binding SelectedAccount}" />
+
+
+                        <Button x:Name="DeleteButton"
+                                Style="{StaticResource Button.Delete.Style}"
+                                Content="🚫 Delete account"
+                                Command="{Binding RemoveCommand}"
+                                CommandParameter="{Binding SelectedAccount}" />
+                    </StackPanel>
+                </StackPanel>
+
+
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,93 @@
+﻿<UserControl x:Class="WPFBankApp.General.MVVM.View.MainWindowView.Views.AboutView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:WPFBankApp.General.MVVM.View.MainWindowView.Views"
+             xmlns:gif="http://wpfanimatedgif.codeplex.com"
+             mc:Ignorable="d"
+             d:DesignHeight="450"
+             d:DesignWidth="800"
+             Background="{StaticResource Color.Main.Onyx.Dark}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="60" />
+            <RowDefinition />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="1"
+                   Style="{StaticResource Title.Style}"
+                   Text="About" />
+
+        <Grid Grid.Row="2"
+              Margin="40 0">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition Height="0.8*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="0.6*" />
+            </Grid.ColumnDefinitions>
+
+            <Ellipse Grid.Row="0"
+                     VerticalAlignment="Top"
+                     HorizontalAlignment="Left"
+                     Width="100"
+                     Height="100"
+                     Fill="LightBlue"
+                     Opacity="0.1">
+            </Ellipse>
+
+            <Image Grid.Row="0"
+                   Margin="15 18"
+                   Width="60"
+                   Height="60"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Left"
+                   gif:ImageBehavior.AnimatedSource="Media/w-hand.gif"
+                   gif:ImageBehavior.RepeatBehavior="2x" />
+
+            <StackPanel Grid.Row="2"
+                        Orientation="Vertical"
+                        VerticalAlignment="Bottom">
+
+                <TextBlock Width="260"
+                           Margin="0 0 0 8"
+                           HorizontalAlignment="Left"
+                           Foreground="LightGray"
+                           FontSize="16"
+                           FontWeight="Light"
+                           TextWrapping="WrapWithOverflow">
+                    Hey! This is my first petproject: banking application for Windows.
+                </TextBlock>
+
+                <TextBlock Margin="0 0 0 25"
+                           Foreground="LightGray"
+                           FontWeight="Light">
+                    Please, contact me for a
+                    <Hyperlink NavigateUri="https://t.me/mattthewprokofev">job offer</Hyperlink>.
+                </TextBlock>
+
+                <TextBlock Margin="0 0 0 5" HorizontalAlignment="Left"
+                           Foreground="Gray"
+                           FontSize="10"
+                           FontWeight="Thin"
+                           TextWrapping="WrapWithOverflow">
+                    .NET 4.8, Windows Presentation Foundation
+                </TextBlock>
+
+                <TextBlock Foreground="Gray"
+                           FontSize="10"
+                           FontWeight="Thin"
+                           TextWrapping="WrapWithOverflow">
+                    Build v.1.3.0, aug 2022
+                </TextBlock>
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+
+</UserControl>

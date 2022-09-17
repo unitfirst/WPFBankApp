@@ -45,6 +45,9 @@
         <Reference Include="WindowsBase" />
         <Reference Include="PresentationCore" />
         <Reference Include="PresentationFramework" />
+        <Reference Include="WpfAnimatedGif, Version=2.0.0.0, Culture=neutral, PublicKeyToken=9e7cd3b544a090dc, processorArchitecture=MSIL">
+          <HintPath>..\packages\WpfAnimatedGif.2.0.2\lib\net40\WpfAnimatedGif.dll</HintPath>
+        </Reference>
     </ItemGroup>
     <ItemGroup>
         <Compile Include="General\App.xaml.cs">
@@ -85,6 +88,18 @@
           <DependentUpon>MainWindow.xaml</DependentUpon>
           <SubType>Code</SubType>
         </Compile>
+        <Compile Include="General\MVVM\View\MainWindowView\Views\AboutView.xaml.cs">
+          <DependentUpon>AboutView.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="General\MVVM\View\MainWindowView\Views\AccountsView.xaml.cs">
+          <DependentUpon>AccountsView.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="General\MVVM\View\MainWindowView\Views\NewAccountView.xaml.cs">
+          <DependentUpon>NewAccountView.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="General\MVVM\View\MainWindowView\Views\SettingsView.xaml.cs">
+          <DependentUpon>SettingsView.xaml</DependentUpon>
+        </Compile>
         <Compile Include="General\Styles\Resources\Extensions.cs" />
         <Compile Include="Properties\AssemblyInfo.cs">
             <SubType>Code</SubType>
@@ -111,13 +126,30 @@
         <Generator>MSBuild:Compile</Generator>
         <SubType>Designer</SubType>
       </Page>
+      <Page Include="General\MVVM\View\MainWindowView\Views\AboutView.xaml" />
+      <Page Include="General\MVVM\View\MainWindowView\Views\AccountsView.xaml" />
+      <Page Include="General\MVVM\View\MainWindowView\Views\NewAccountView.xaml" />
+      <Page Include="General\MVVM\View\MainWindowView\Views\SettingsView.xaml" />
       <Page Include="General\Styles\Resources\Icons.xaml" />
+      <Page Include="General\Styles\Themes\Nord\Button.Default.Nord.xaml" />
+      <Page Include="General\Styles\Themes\Nord\Button.Delete.Nord.xaml" />
+      <Page Include="General\Styles\Themes\Nord\ColorStyle.Nord.xaml" />
+      <Page Include="General\Styles\Themes\Nord\DataGrid.Nord.xaml" />
+      <Page Include="General\Styles\Themes\Nord\MenuButton.Nord.xaml" />
+      <Page Include="General\Styles\Themes\Nord\ResizeGrip.Nord.xaml" />
+      <Page Include="General\Styles\Themes\Nord\ScrollBar.Nord.xaml" />
+      <Page Include="General\Styles\Themes\Nord\SubTitle.Nord.xaml" />
+      <Page Include="General\Styles\Themes\Nord\TextBox.Default.Nord.xaml" />
+      <Page Include="General\Styles\Themes\Nord\TextBox.Search.Nord.xaml" />
+      <Page Include="General\Styles\Themes\Nord\Title.Nord.xaml" />
+      <Page Include="General\Styles\Themes\Nord\TitleBarButton.Nord.xaml" />
     </ItemGroup>
     <ItemGroup>
       <None Include="App.config" />
+      <None Include="packages.config" />
     </ItemGroup>
     <ItemGroup>
-      <Folder Include="General\Styles" />
+      <Content Include="General\MVVM\View\MainWindowView\Views\Media\w-hand.gif" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
