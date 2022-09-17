@@ -5,7 +5,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:extensions="clr-namespace:WPFBankApp.General.Resources" 
-        xmlns:cmd="clr-namespace:WPFBankApp.General.Core.Commands"
         xmlns:toolbar="clr-namespace:WPFBankApp.General.Core.Commands.Toolbar"
         xmlns:converter="clr-namespace:WPFBankApp.General.Core.Converters"
         xmlns:viewmodel="clr-namespace:WPFBankApp.General.MVVM.ViewModel.MainWindowVM"
@@ -27,7 +26,7 @@
     <Window.Resources>
         <toolbar:MinimizeWindowCommand x:Key="MinimizeWindowCommand"/>
         <toolbar:MaximizeWindowCommand x:Key="MaximizeWindowCommand"/>
-        <cmd:ShutDownCommand x:Key="ShutDownCommand"/>
+        <toolbar:ShutDownCommand x:Key="ShutDownCommand"/>
         <toolbar:MoveWindowCommand x:Key="MoveWindowCommand"/>
         <converter:UserModeToString x:Key="UserModeToString"></converter:UserModeToString>
     </Window.Resources>
