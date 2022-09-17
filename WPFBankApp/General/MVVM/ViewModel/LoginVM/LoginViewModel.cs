@@ -4,8 +4,9 @@ using WPFBankApp.AppFiles.Core.Commands;
 using WPFBankApp.General.MVVM.Model.Employees;
 using WPFBankApp.General.MVVM.Model.Employees.Base;
 using WPFBankApp.General.MVVM.ViewModel.Base;
+using WPFBankApp.General.MVVM.ViewModel.MainWindowVM;
 
-namespace WPFBankApp.General.MVVM.ViewModel;
+namespace WPFBankApp.General.MVVM.ViewModel.LoginVM;
 
 public class LoginViewModel : ViewModelBase
 {

@@ -6,7 +6,7 @@ using WPFBankApp.General.MVVM.Model.Accounts;
 using WPFBankApp.General.MVVM.Model.Accounts.ProtectedData;
 using WPFBankApp.General.MVVM.ViewModel.Base;
 
-namespace WPFBankApp.General.MVVM.ViewModel;
+namespace WPFBankApp.General.MVVM.ViewModel.MainWindowVM;
 
 public class AccountsViewModel : ViewModelBase
 {

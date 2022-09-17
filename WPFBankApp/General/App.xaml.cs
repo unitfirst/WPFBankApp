@@ -1,9 +1,16 @@
-﻿namespace WPFBankApp.General
+﻿using System.Windows;
+using WPFBankApp.General.MVVM.View.LoginWindow;
+using WPFBankApp.General.MVVM.ViewModel;
+using WPFBankApp.General.MVVM.ViewModel.LoginVM;
+
+namespace WPFBankApp.General
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
-    public partial class App
+    public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            new LoginWindow { DataContext = new LoginViewModel() }.Show();
+        }
     }
 }

@@ -4,7 +4,7 @@ using WPFBankApp.General.MVVM.Model.Accounts;
 using WPFBankApp.General.MVVM.Model.Employees.Base;
 using WPFBankApp.General.MVVM.ViewModel.Base;
 
-namespace WPFBankApp.General.MVVM.ViewModel;
+namespace WPFBankApp.General.MVVM.ViewModel.MainWindowVM;
 
     public class MainViewModel : ViewModelBase
     {
