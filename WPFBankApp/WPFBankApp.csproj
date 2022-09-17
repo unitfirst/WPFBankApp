@@ -13,6 +13,7 @@
         <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
         <WarningLevel>4</WarningLevel>
         <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+        <LangVersion>latest</LangVersion>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <PlatformTarget>AnyCPU</PlatformTarget>
@@ -50,6 +51,7 @@
           <DependentUpon>App.xaml</DependentUpon>
           <SubType>Code</SubType>
         </Compile>
+        <Compile Include="General\Converters\UserModeToString.cs" />
         <Compile Include="General\Core\Commands\Base\Command.cs" />
         <Compile Include="General\Core\Commands\RelayCommand.cs" />
         <Compile Include="General\Core\Commands\Toolbar\MaximizeWindowCommand.cs" />
@@ -62,6 +64,9 @@
           <DependentUpon>MainWindow.xaml</DependentUpon>
           <SubType>Code</SubType>
         </Compile>
+        <Compile Include="General\MVVM\Model\Employees\Base\Employee.cs" />
+        <Compile Include="General\MVVM\Model\Employees\Consultant.cs" />
+        <Compile Include="General\MVVM\Model\Employees\Employee.cs" />
         <Compile Include="Properties\AssemblyInfo.cs">
             <SubType>Code</SubType>
         </Compile>
@@ -89,6 +94,10 @@
     </ItemGroup>
     <ItemGroup>
       <None Include="App.config" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="General\MVVM\View" />
+      <Folder Include="General\MVVM\ViewModel" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
