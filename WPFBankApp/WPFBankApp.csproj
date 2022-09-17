@@ -64,6 +64,9 @@
           <DependentUpon>MainWindow.xaml</DependentUpon>
           <SubType>Code</SubType>
         </Compile>
+        <Compile Include="General\MVVM\Model\Access\AccessValidator.cs" />
+        <Compile Include="General\MVVM\Model\Access\Parameters\CommandAccess.cs" />
+        <Compile Include="General\MVVM\Model\Access\Parameters\EditAccess.cs" />
         <Compile Include="General\MVVM\Model\Employees\Base\Employee.cs" />
         <Compile Include="General\MVVM\Model\Employees\Consultant.cs" />
         <Compile Include="General\MVVM\Model\Employees\Employee.cs" />

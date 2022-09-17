@@ -1,4 +1,6 @@
-﻿namespace WPFBankApp.General.MVVM.Model.Employees.Base;
+﻿using WPFBankApp.General.MVVM.Model.Access;
+
+namespace WPFBankApp.General.MVVM.Model.Employees.Base;
 
 public abstract class Employee
 {
