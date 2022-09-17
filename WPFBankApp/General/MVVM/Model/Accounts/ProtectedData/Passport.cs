@@ -1,4 +1,6 @@
-﻿namespace WPFBankApp.General.MVVM.Model.Accounts.ProtectedData;
+﻿using WPFBankApp.General.MVVM.ViewModel.Base;
+
+namespace WPFBankApp.General.MVVM.Model.Accounts.ProtectedData;
 
 public class Passport : ViewModelBase
 {

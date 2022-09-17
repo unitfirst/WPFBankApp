@@ -1,4 +1,8 @@
-﻿namespace WPFBankApp.General.MVVM.Model.Accounts.Base;
+﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using WPFBankApp.General.MVVM.ViewModel.Base;
+
+namespace WPFBankApp.General.MVVM.Model.Accounts.Base;
 
 public class Person : ViewModelBase
 {

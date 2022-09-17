@@ -74,7 +74,8 @@
         <Compile Include="General\MVVM\Model\Accounts\ProtectedData\PhoneNumber.cs" />
         <Compile Include="General\MVVM\Model\Employees\Base\Employee.cs" />
         <Compile Include="General\MVVM\Model\Employees\Consultant.cs" />
-        <Compile Include="General\MVVM\Model\Employees\Employee.cs" />
+        <Compile Include="General\MVVM\Model\Employees\Manager.cs" />
+        <Compile Include="General\MVVM\ViewModel\Base\ViewModelBase.cs" />
         <Compile Include="Properties\AssemblyInfo.cs">
             <SubType>Code</SubType>
         </Compile>
@@ -104,8 +105,8 @@
       <None Include="App.config" />
     </ItemGroup>
     <ItemGroup>
-      <Folder Include="General\MVVM\View" />
-      <Folder Include="General\MVVM\ViewModel" />
+      <Folder Include="General\MVVM\View\LoginWindow" />
+      <Folder Include="General\MVVM\View\MainWindow" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

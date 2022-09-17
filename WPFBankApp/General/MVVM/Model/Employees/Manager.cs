@@ -1,4 +1,5 @@
-﻿using WPFBankApp.General.MVVM.Model.Employees.Base;
+﻿using WPFBankApp.General.MVVM.Model.Accounts;
+using WPFBankApp.General.MVVM.Model.Employees.Base;
 
 namespace WPFBankApp.General.MVVM.Model.Employees;
 

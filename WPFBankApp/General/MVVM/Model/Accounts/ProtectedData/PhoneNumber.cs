@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text.RegularExpressions;
+using WPFBankApp.General.MVVM.ViewModel.Base;
 
 namespace WPFBankApp.General.MVVM.Model.Accounts.ProtectedData;
 
