@@ -1,4 +1,4 @@
-﻿namespace WPFBankApp
+﻿namespace WPFBankApp.General.MVVM.View.MainWindowView
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

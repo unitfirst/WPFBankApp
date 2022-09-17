@@ -51,7 +51,6 @@
           <DependentUpon>App.xaml</DependentUpon>
           <SubType>Code</SubType>
         </Compile>
-        <Compile Include="General\Converters\UserModeToString.cs" />
         <Compile Include="General\Core\Commands\Base\Command.cs" />
         <Compile Include="General\Core\Commands\RelayCommand.cs" />
         <Compile Include="General\Core\Commands\Toolbar\MaximizeWindowCommand.cs" />
@@ -60,10 +59,7 @@
         <Compile Include="General\Core\Commands\Toolbar\ShutDownCommand.cs" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="General\MainWindow.xaml.cs">
-          <DependentUpon>MainWindow.xaml</DependentUpon>
-          <SubType>Code</SubType>
-        </Compile>
+        <Compile Include="General\Core\Converters\UserModeToString.cs" />
         <Compile Include="General\MVVM\Model\Access\AccessValidator.cs" />
         <Compile Include="General\MVVM\Model\Access\Parameters\CommandAccess.cs" />
         <Compile Include="General\MVVM\Model\Access\Parameters\EditAccess.cs" />
@@ -82,8 +78,12 @@
         <Compile Include="General\MVVM\ViewModel\MainWindowVM\MainViewModel.cs" />
         <Compile Include="General\MVVM\ViewModel\MainWindowVM\NewAccountViewModel.cs" />
         <Compile Include="General\MVVM\ViewModel\MainWindowVM\SettingsViewModel.cs" />
-        <Compile Include="General\MVVM\View\LoginWindow\LoginWindow.xaml.cs">
+        <Compile Include="General\MVVM\View\LoginWindowView\LoginWindow.xaml.cs">
           <DependentUpon>LoginWindow.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="General\MVVM\View\MainWindowView\MainWindow.xaml.cs">
+          <DependentUpon>MainWindow.xaml</DependentUpon>
+          <SubType>Code</SubType>
         </Compile>
         <Compile Include="Properties\AssemblyInfo.cs">
             <SubType>Code</SubType>
@@ -105,17 +105,14 @@
       </ApplicationDefinition>
     </ItemGroup>
     <ItemGroup>
-      <Page Include="General\MainWindow.xaml">
+      <Page Include="General\MVVM\View\LoginWindowView\LoginWindow.xaml" />
+      <Page Include="General\MVVM\View\MainWindowView\MainWindow.xaml">
         <Generator>MSBuild:Compile</Generator>
         <SubType>Designer</SubType>
       </Page>
-      <Page Include="General\MVVM\View\LoginWindow\LoginWindow.xaml" />
     </ItemGroup>
     <ItemGroup>
       <None Include="App.config" />
-    </ItemGroup>
-    <ItemGroup>
-      <Folder Include="General\MVVM\View\MainWindow" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
