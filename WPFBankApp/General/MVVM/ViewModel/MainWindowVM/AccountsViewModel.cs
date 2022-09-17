@@ -32,15 +32,14 @@ public class AccountsViewModel : ViewModelBase
     {
         get
         {
-            return _removeCommand ??
-                   (_removeCommand = new RelayCommand(obj =>
-                       {
-                           if (obj is Account account)
-                           {
-                               Accounts.Remove(account);
-                           }
-                       },
-                       (obj) => Accounts.Count > 0));
+            return _removeCommand ??= new RelayCommand(obj =>
+                {
+                    if (obj is Account account)
+                    {
+                        Accounts.Remove(account);
+                    }
+                },
+                (obj) => Accounts.Count > 0);
         }
     }
 
@@ -48,20 +47,19 @@ public class AccountsViewModel : ViewModelBase
     {
         get
         {
-            return _applyCommand ??
-                   (_applyCommand = new RelayCommand(obj =>
-                       {
-                           if (obj is Account account)
-                           {
-                               Account tempAccount = SelectedAccount;
-                               int index = Accounts.IndexOf(SelectedAccount);
+            return _applyCommand ??= new RelayCommand(obj =>
+                {
+                    if (obj is Account account)
+                    {
+                        Account tempAccount = SelectedAccount;
+                        int index = Accounts.IndexOf(SelectedAccount);
 
-                               Accounts.Remove(SelectedAccount);
-                               Accounts.Insert(index, tempAccount);
-                               SelectedAccount = tempAccount;
-                           }
-                       },
-                       (obj) => Accounts.Count > 0));
+                        Accounts.Remove(SelectedAccount);
+                        Accounts.Insert(index, tempAccount);
+                        SelectedAccount = tempAccount;
+                    }
+                },
+                (obj) => Accounts.Count > 0);
         }
     }
 
