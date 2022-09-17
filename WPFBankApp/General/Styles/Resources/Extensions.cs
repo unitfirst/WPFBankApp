@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace WPFBankApp.General.Resources;
+namespace WPFBankApp.General.Styles.Resources;
 
 internal class Extensions
 {
