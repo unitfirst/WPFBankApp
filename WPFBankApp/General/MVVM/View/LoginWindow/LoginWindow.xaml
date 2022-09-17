@@ -7,7 +7,7 @@
         xmlns:viewmodel="clr-namespace:WPFBankApp.General.MVVM.ViewModel"
         xmlns:cmd="clr-namespace:WPFBankApp.General.Core.Commands"
         xmlns:toolbar="clr-namespace:WPFBankApp.General.Core.Commands.Toolbar"
-        xmlns:loginVm="clr-namespace:WPFBankApp.General.MVVM.ViewModel.LoginVM"
+        xmlns:loginWindowVm="clr-namespace:WPFBankApp.General.MVVM.ViewModel.LoginWindowVM"
         mc:Ignorable="d"
         Height="400" 
         Width="400"
@@ -17,7 +17,7 @@
         ResizeMode="NoResize">
 
     <Window.DataContext>
-        <loginVm:LoginViewModel/>
+        <loginWindowVm:LoginViewModel/>
     </Window.DataContext>
 
     <Window.Resources>

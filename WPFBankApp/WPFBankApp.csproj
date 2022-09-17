@@ -76,7 +76,7 @@
         <Compile Include="General\MVVM\Model\Employees\Consultant.cs" />
         <Compile Include="General\MVVM\Model\Employees\Manager.cs" />
         <Compile Include="General\MVVM\ViewModel\Base\ViewModelBase.cs" />
-        <Compile Include="General\MVVM\ViewModel\LoginVM\LoginViewModel.cs" />
+        <Compile Include="General\MVVM\ViewModel\LoginWindowVM\LoginViewModel.cs" />
         <Compile Include="General\MVVM\ViewModel\MainWindowVM\AboutViewModel.cs" />
         <Compile Include="General\MVVM\ViewModel\MainWindowVM\AccountsViewModel.cs" />
         <Compile Include="General\MVVM\ViewModel\MainWindowVM\MainViewModel.cs" />

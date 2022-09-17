@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using WPFBankApp.General.MVVM.View.LoginWindow;
 using WPFBankApp.General.MVVM.ViewModel;
-using WPFBankApp.General.MVVM.ViewModel.LoginVM;
+using WPFBankApp.General.MVVM.ViewModel.LoginWindowVM;
 
 namespace WPFBankApp.General
 {
