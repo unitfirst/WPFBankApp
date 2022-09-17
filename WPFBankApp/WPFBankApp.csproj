@@ -67,6 +67,11 @@
         <Compile Include="General\MVVM\Model\Access\AccessValidator.cs" />
         <Compile Include="General\MVVM\Model\Access\Parameters\CommandAccess.cs" />
         <Compile Include="General\MVVM\Model\Access\Parameters\EditAccess.cs" />
+        <Compile Include="General\MVVM\Model\Accounts\Account.cs" />
+        <Compile Include="General\MVVM\Model\Accounts\AccountInfo.cs" />
+        <Compile Include="General\MVVM\Model\Accounts\Base\Person.cs" />
+        <Compile Include="General\MVVM\Model\Accounts\ProtectedData\Passport.cs" />
+        <Compile Include="General\MVVM\Model\Accounts\ProtectedData\PhoneNumber.cs" />
         <Compile Include="General\MVVM\Model\Employees\Base\Employee.cs" />
         <Compile Include="General\MVVM\Model\Employees\Consultant.cs" />
         <Compile Include="General\MVVM\Model\Employees\Employee.cs" />
