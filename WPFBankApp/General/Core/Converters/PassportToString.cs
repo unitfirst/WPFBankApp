@@ -9,7 +9,7 @@ public class PassportDataToString : IValueConverter
 {
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
-        if (!(value is Passport data)) return null;
+        if (value is not Passport data) return null;
         return data.ToString();
     }
 

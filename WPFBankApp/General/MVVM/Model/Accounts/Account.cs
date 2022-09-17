@@ -34,7 +34,7 @@ public class Account : Person
 
     public Account() { }
 
-    public Account(string firstName, string lastName, PhoneNumber phoneNumber, Passport passport)
+    protected Account(string firstName, string lastName, PhoneNumber phoneNumber, Passport passport)
         : base(firstName, lastName)
     {
         PhoneNumber = phoneNumber;
