@@ -3,11 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:WPFBankApp.General.MVVM.View.MainWindowView.Views"
+             xmlns:c="clr-namespace:WPFBankApp.General.Core.Converters"
              mc:Ignorable="d"
              d:DesignHeight="450"
              d:DesignWidth="800"
              Background="{StaticResource Color.Main.Onyx.Dark}">
+    <UserControl.Resources>
+        <c:PhoneNumberToString x:Key="PhoneNumberToStringConvertor"></c:PhoneNumberToString>
+        <c:PassportDataToString x:Key="PassportDataToStringConvertor"></c:PassportDataToString>
+    </UserControl.Resources>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="40" />
@@ -15,6 +20,7 @@
             <RowDefinition />
             <RowDefinition Height="20" />
         </Grid.RowDefinitions>
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition Width="100" />
@@ -139,13 +145,19 @@
                                Text="Phone number" />
                     <TextBox Style="{StaticResource TextBox.Default.Style}"
                              x:Name="tbPhoneNumber"
-                             Text="{Binding SelectedAccount.PhoneNumber, UpdateSourceTrigger=PropertyChanged}" />
+                             Text="{Binding SelectedAccount.PhoneNumber, 
+                             UpdateSourceTrigger=PropertyChanged, 
+                             Mode=OneWay, 
+                             Converter={StaticResource PhoneNumberToStringConvertor}}"/>
 
                     <TextBlock Style="{StaticResource SubTitle.Style}"
                                Text="Passport" />
                     <TextBox Style="{StaticResource TextBox.Default.Style}"
                              x:Name="tbPassport"
-                             Text="{Binding SelectedAccount.Passport, UpdateSourceTrigger=PropertyChanged}" />
+                             Text="{Binding SelectedAccount.Passport, 
+                             UpdateSourceTrigger=PropertyChanged, 
+                             Mode=OneWay, 
+                             Converter={StaticResource PassportDataToStringConvertor}}"/>
 
                     <StackPanel Orientation="Horizontal"
                                 VerticalAlignment="Bottom"

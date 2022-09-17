@@ -62,6 +62,8 @@
         <Compile Include="General\Core\Commands\Toolbar\ShutDownCommand.cs" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="General\Core\Converters\PassportToString.cs" />
+        <Compile Include="General\Core\Converters\PhoneNumberToString.cs" />
         <Compile Include="General\Core\Converters\UserModeToString.cs" />
         <Compile Include="General\MVVM\Model\Access\AccessValidator.cs" />
         <Compile Include="General\MVVM\Model\Access\Parameters\CommandAccess.cs" />
