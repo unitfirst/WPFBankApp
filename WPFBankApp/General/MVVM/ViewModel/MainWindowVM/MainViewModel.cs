@@ -1,8 +1,10 @@
 ﻿using System.Windows.Input;
 using WPFBankApp.AppFiles.Core.Commands;
+using WPFBankApp.General.Data;
 using WPFBankApp.General.MVVM.Model.Accounts;
 using WPFBankApp.General.MVVM.Model.Employees.Base;
 using WPFBankApp.General.MVVM.ViewModel.Base;
+using WPFBankApp.General.Service;
 
 namespace WPFBankApp.General.MVVM.ViewModel.MainWindowVM;
 
@@ -14,6 +16,7 @@ public class MainViewModel : ViewModelBase
 
     public MainViewModel(Employee employee)
     {
+        Employee = employee;
         #region Views
 
         AccountsVm = new AccountsViewModel();
@@ -22,8 +25,7 @@ public class MainViewModel : ViewModelBase
         AboutVm = new AboutViewModel();
 
         CurrentView = AccountsVm;
-        Employee = employee;
-
+        
         #endregion
 
         #region Change view commands
