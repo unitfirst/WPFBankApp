@@ -12,6 +12,8 @@ public class Repository : IRepository
 {
     private string _path;
     private List<Account> _records;
+    public List<Account> Records => _records;
+    public IEnumerable<Account> GetAllRecords() => Records;
     public int Count => _records.Count;
 
     public Repository(string path)
@@ -28,12 +30,7 @@ public class Repository : IRepository
             AddTestRecord();
         }
     }
-
-    public IEnumerable<Account> GetAllRecords()
-    {
-        throw new System.NotImplementedException();
-    }
-
+    
     public Account GetRecordById(int id)
     {
         throw new System.NotImplementedException();
@@ -43,13 +40,13 @@ public class Repository : IRepository
     {
         using (var reader = new StreamReader(_path))
         {
-            var result = JsonConvert.DeserializeObject<List<Account>>(reader.ReadToEnd());
-            if (string.IsNullOrEmpty(_path) || result is null)
+            _records = JsonConvert.DeserializeObject<List<Account>>(reader.ReadToEnd());
+            if (string.IsNullOrEmpty(_path) || _records is null)
             {
                 AddTestRecord();
-                return result;
+                return _records;
             }
-            return result;
+            return _records;
         }
     }
 
