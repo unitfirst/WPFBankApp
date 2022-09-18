@@ -12,7 +12,6 @@ public class AccountsViewModel : ViewModelBase
 {
     private Command _applyCommand;
     private Command _removeCommand;
-    //private Command _addCommand;
     private Account _selectedAccount;
     public ICommand UpdateCommand { get; set; }
 
@@ -65,15 +64,15 @@ public class AccountsViewModel : ViewModelBase
 
     public AccountsViewModel()
     {
-        Accounts = new ObservableCollection<Account>
-        {
-            new Account()
-            {
-                FirstName = "Hideo", 
-                LastName = "Kodzima", 
-                PhoneNumber = new PhoneNumber("+791012345"),
-                Passport = new Passport(00998772234)
-            },
-        };
+        // Accounts = new ObservableCollection<Account>
+        // {
+        //     new Account()
+        //     {
+        //         FirstName = "Hideo", 
+        //         LastName = "Kodzima", 
+        //         PhoneNumber = new PhoneNumber("+791012345"),
+        //         Passport = new Passport(00998772234)
+        //     },
+        // };
     }
 }

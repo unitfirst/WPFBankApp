@@ -4,13 +4,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:c="clr-namespace:WPFBankApp.General.Core.Converters"
+             xmlns:vm="clr-namespace:WPFBankApp.General.MVVM.ViewModel.MainWindowVM"
              mc:Ignorable="d"
              d:DesignHeight="450"
              d:DesignWidth="800"
              Background="{StaticResource Color.Main.Onyx.Dark}">
+    <UserControl.DataContext>
+        <vm:AccountsViewModel />
+    </UserControl.DataContext>
     <UserControl.Resources>
         <c:PhoneNumberToString x:Key="PhoneNumberToStringConvertor"></c:PhoneNumberToString>
-        <c:PassportDataToString x:Key="PassportDataToStringConvertor"></c:PassportDataToString>
+        <c:PassportToString x:Key="PassportToStringConvertor"></c:PassportToString>
     </UserControl.Resources>
     
     <Grid>
@@ -125,12 +129,15 @@
                     <TextBlock Style="{StaticResource SubTitle.Style}"
                                Text="First name" />
                     <TextBox Style="{StaticResource TextBox.Default.Style}"
-                             Text="{Binding SelectedAccount.FirstName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+                             Text="{Binding SelectedAccount.FirstName, 
+                             UpdateSourceTrigger=PropertyChanged, 
+                             Mode=TwoWay}" />
 
                     <TextBlock Style="{StaticResource SubTitle.Style}"
                                Text="Last name" />
                     <TextBox Style="{StaticResource TextBox.Default.Style}"
-                             Text="{Binding SelectedAccount.LastName, UpdateSourceTrigger=PropertyChanged}" />
+                             Text="{Binding SelectedAccount.LastName, 
+                             UpdateSourceTrigger=PropertyChanged}" />
 
                     <TextBlock Style="{StaticResource SubTitle.Style}"
                                Text="Phone number" />
@@ -146,7 +153,7 @@
                              Text="{Binding SelectedAccount.Passport, 
                              UpdateSourceTrigger=PropertyChanged, 
                              Mode=OneWay, 
-                             Converter={StaticResource PassportDataToStringConvertor}}"/>
+                             Converter={StaticResource PassportToStringConvertor}}"/>
 
                     <StackPanel Orientation="Horizontal"
                                 VerticalAlignment="Bottom"

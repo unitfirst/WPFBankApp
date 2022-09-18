@@ -31,8 +31,8 @@ public class Passport : ViewModelBase
 
     #region Values
 
-    public const long MinValue = 1;
-    public const long MaxValue = 9999999999;
+    private const long MinValue = 1;
+    private const long MaxValue = 9999999999;
 
     #endregion
 
