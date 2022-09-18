@@ -11,11 +11,7 @@ namespace WPFBankApp.General.Data;
 
 public class Repository : IRepository
 {
-    private string _path;
-    private List<Account> _records;
-    public List<Account> Records => _records;
-    public IEnumerable<Account> GetAllRecords() => Records;
-    public int Count => _records.Count;
+    private readonly string _path;
 
     public Repository(string path)
     {
@@ -32,57 +28,76 @@ public class Repository : IRepository
         }
     }
 
+    public List<Account> Records { get; private set; }
+
+    public IEnumerable<Account> GetAllRecords()
+    {
+        return Records;
+    }
+
+    public int Count => Records.Count;
+
     public Account GetRecordById(int id)
     {
-        throw new System.NotImplementedException();
+        throw new NotImplementedException();
+    }
+
+    public void InsertRecord(Account account)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void DeleteRecord(int id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void UpdateRecord(Account account)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void ClearAllRecords()
+    {
+        throw new NotImplementedException();
+    }
+
+    public IEnumerator<Account> GetEnumerator()
+    {
+        for (var i = 0; i < Count; i++) yield return Records[i];
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
     }
 
     private List<Account> LoadFile(string path)
     {
         using (var reader = new StreamReader(_path))
         {
-            _records = JsonConvert.DeserializeObject<List<Account>>(reader.ReadToEnd());
-            if (string.IsNullOrEmpty(_path) || _records is null)
+            Records = JsonConvert.DeserializeObject<List<Account>>(reader.ReadToEnd());
+            if (string.IsNullOrEmpty(_path) || Records is null)
             {
                 AddTestRecord();
-                return _records;
+                return Records;
             }
 
-            return _records;
+            return Records;
         }
     }
 
     public void SaveFile(string path)
     {
-        var file = JsonConvert.SerializeObject(_records.ToArray());
+        var file = JsonConvert.SerializeObject(Records.ToArray());
         File.WriteAllText(_path, file);
-    }
-
-    public void InsertRecord(Account account)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void DeleteRecord(int id)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void UpdateRecord(Account account)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void ClearAllRecords()
-    {
-        throw new System.NotImplementedException();
     }
 
     private void AddTestRecord()
     {
-        _records = new List<Account>();
+        Records = new List<Account>();
 
-        var testRecord = new Account()
+        var testRecord = new Account
         {
             FirstName = "Hideo",
             LastName = "Kodzima",
@@ -90,19 +105,6 @@ public class Repository : IRepository
             Passport = new Passport(0000000000)
         };
 
-        _records.Add(testRecord);
-    }
-
-    public IEnumerator<Account> GetEnumerator()
-    {
-        for (var i = 0; i < Count; i++)
-        {
-            yield return Records[i];
-        }
-    }
-
-    IEnumerator IEnumerable.GetEnumerator()
-    {
-        return GetEnumerator();
+        Records.Add(testRecord);
     }
 }

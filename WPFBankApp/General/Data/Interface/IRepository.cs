@@ -8,14 +8,14 @@ public interface IRepository : IEnumerable<Account>
     public int Count { get; }
 
     void InsertRecord(Account account);
-    
+
     void DeleteRecord(int id);
-    
+
     void UpdateRecord(Account account);
-    
+
     void ClearAllRecords();
-    
+
     Account GetRecordById(int id);
-    
+
     IEnumerable<Account> GetAllRecords();
 }
