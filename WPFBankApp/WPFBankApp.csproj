@@ -133,6 +133,7 @@
         <Compile Include="General\MVVM\View\MainWindowView\Views\SettingsView.xaml.cs">
           <DependentUpon>SettingsView.xaml</DependentUpon>
         </Compile>
+        <Compile Include="General\Service\Bank.cs" />
         <Compile Include="General\Styles\Resources\Extensions.cs" />
         <Compile Include="Properties\AssemblyInfo.cs">
             <SubType>Code</SubType>
