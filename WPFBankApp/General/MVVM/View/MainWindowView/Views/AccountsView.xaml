@@ -62,54 +62,47 @@
                       ScrollViewer.VerticalScrollBarVisibility="Auto">
 
                 <DataGrid.Columns>
-                    <DataGridTextColumn x:Name="AddTimeCol"
-                                        Visibility="Collapsed"
+                    <DataGridTextColumn Visibility="Collapsed"
                                         Header="Added"
                                         Width="100*"
                                         MinWidth="100"
                                         CanUserSort="True" />
 
-                    <DataGridTextColumn x:Name="LastUpdateCol"
-                                        Visibility="Collapsed"
+                    <DataGridTextColumn Visibility="Collapsed"
                                         Header="Edited"
                                         Width="100*"
                                         MinWidth="100"
                                         IsReadOnly="True" />
 
-                    <DataGridTextColumn x:Name="IdCol"
-                                        Header="ID"
+                    <DataGridTextColumn Header="ID"
                                         Width="60*"
                                         MinWidth="60"
                                         IsReadOnly="True"
                                         CanUserSort="True"
                                         Binding="{Binding Id}" />
 
-                    <DataGridTextColumn x:Name="FirstNameCol"
-                                        Header="First name"
+                    <DataGridTextColumn Header="First name"
                                         Width="180*"
                                         MinWidth="180"
                                         IsReadOnly="True"
                                         CanUserSort="True"
                                         Binding="{Binding FirstName}" />
 
-                    <DataGridTextColumn x:Name="LastNameCol"
-                                        Header="Last name"
+                    <DataGridTextColumn Header="Last name"
                                         Width="180*"
                                         MinWidth="180"
                                         IsReadOnly="True"
                                         CanUserSort="True"
                                         Binding="{Binding LastName}" />
 
-                    <DataGridTextColumn x:Name="PhoneCol"
-                                        Header="Phone"
+                    <DataGridTextColumn Header="Phone"
                                         Width="100*"
                                         MinWidth="100"
                                         IsReadOnly="True"
                                         CanUserSort="True"
                                         Binding="{Binding PhoneNumber}" />
 
-                    <DataGridTextColumn x:Name="PassportCol"
-                                        Header="Passport"
+                    <DataGridTextColumn Header="Passport"
                                         Width="100*"
                                         MinWidth="100"
                                         IsReadOnly="True"
