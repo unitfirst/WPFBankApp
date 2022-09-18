@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
@@ -30,7 +31,7 @@ public class Repository : IRepository
             AddTestRecord();
         }
     }
-    
+
     public Account GetRecordById(int id)
     {
         throw new System.NotImplementedException();
@@ -46,6 +47,7 @@ public class Repository : IRepository
                 AddTestRecord();
                 return _records;
             }
+
             return _records;
         }
     }
@@ -87,13 +89,16 @@ public class Repository : IRepository
             PhoneNumber = new PhoneNumber("+70000000000"),
             Passport = new Passport(0000000000)
         };
-        
+
         _records.Add(testRecord);
     }
 
     public IEnumerator<Account> GetEnumerator()
     {
-        throw new System.NotImplementedException();
+        for (var i = 0; i < Count; i++)
+        {
+            yield return Records[i];
+        }
     }
 
     IEnumerator IEnumerable.GetEnumerator()
