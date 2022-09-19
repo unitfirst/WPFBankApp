@@ -16,7 +16,7 @@ namespace WPFBankApp.General.MVVM.ViewModel.MainWindowVM;
 public class MainViewModel : ViewModelBase
 {
     public IConfig Config;
-    public Action UpdateClientsList;
+    public Action UpdateAccountsList;
 
     public MainViewModel()
     {
