@@ -89,6 +89,9 @@
         <Compile Include="General\Core\Commands\Toolbar\MinimizeWindowCommand.cs" />
         <Compile Include="General\Core\Commands\Toolbar\MoveWindowCommand.cs" />
         <Compile Include="General\Core\Commands\Toolbar\ShutDownCommand.cs" />
+        <Compile Include="General\Core\Settings\Config.cs" />
+        <Compile Include="General\Core\Settings\IConfig.cs" />
+        <Compile Include="General\Core\Settings\Paths\AccountsPath.cs" />
     </ItemGroup>
     <ItemGroup>
         <Compile Include="General\Core\Converters\PassportToString.cs" />

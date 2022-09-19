@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using Newtonsoft.Json;
 using WPFBankApp.General.Data.Interface;
@@ -25,6 +26,7 @@ public class Repository : IRepository
         {
             File.Create(_path).Dispose();
             AddTestRecord();
+            LoadFile(_path);
         }
     }
 
@@ -32,6 +34,7 @@ public class Repository : IRepository
 
     public IEnumerable<Account> GetAllRecords()
     {
+        Debug.WriteLine("---------CALL GetAllRecords---------");
         return Records;
     }
 
@@ -80,9 +83,10 @@ public class Repository : IRepository
             if (string.IsNullOrEmpty(_path) || Records is null)
             {
                 AddTestRecord();
+
                 return Records;
             }
-
+            
             return Records;
         }
     }
@@ -102,9 +106,10 @@ public class Repository : IRepository
             FirstName = "Hideo",
             LastName = "Kodzima",
             PhoneNumber = new PhoneNumber("+70000000000"),
-            Passport = new Passport(0000000000)
+            Passport = new Passport(1234567890)
         };
 
         Records.Add(testRecord);
+        SaveFile(_path);
     }
 }

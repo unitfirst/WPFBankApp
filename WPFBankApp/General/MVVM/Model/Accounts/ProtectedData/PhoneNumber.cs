@@ -35,7 +35,7 @@ public class PhoneNumber : ViewModelBase
 
     public static bool IsPhoneNumber(string number)
     {
-        var result = Regex.Match(number, @"^(\+[0-9]{9})$").Success;
+        var result = Regex.Match(number, @"^(\+[0-9]{11})$").Success;
         return result;
     }
 

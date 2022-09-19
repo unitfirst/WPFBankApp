@@ -1,5 +1,10 @@
-﻿using System.Windows.Input;
+﻿using System;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Windows.Input;
 using WPFBankApp.AppFiles.Core.Commands;
+using WPFBankApp.General.Core.Settings;
+using WPFBankApp.General.Core.Settings.Paths;
 using WPFBankApp.General.Data;
 using WPFBankApp.General.MVVM.Model.Accounts;
 using WPFBankApp.General.MVVM.Model.Employees.Base;
@@ -10,22 +15,33 @@ namespace WPFBankApp.General.MVVM.ViewModel.MainWindowVM;
 
 public class MainViewModel : ViewModelBase
 {
+    public IConfig Config;
+    public Action UpdateClientsList;
+
     public MainViewModel()
     {
     }
 
     public MainViewModel(Employee employee)
     {
+        Config = new Config();
+        AccountsPath = Config.Load();
         Employee = employee;
+        Bank = new Bank("niBank", new Repository(AccountsPath.FilePath), employee);
+        
+        Accounts = new ObservableCollection<Account>();
+
+        UpdateList();
+
         #region Views
 
-        AccountsVm = new AccountsViewModel();
-        NewAccountVm = new NewAccountViewModel();
+        AccountsVm = new AccountsViewModel(this, Accounts);
+        NewAccountVm = new NewAccountViewModel(this);
         SettingsVm = new SettingsViewModel();
         AboutVm = new AboutViewModel();
 
         CurrentView = AccountsVm;
-        
+
         #endregion
 
         #region Change view commands
@@ -36,6 +52,25 @@ public class MainViewModel : ViewModelBase
         ShowAboutView = new RelayCommand(OnShowAboutViewExecuted, CanShowAboutViewExecute);
 
         #endregion
+    }
+
+    private void UpdateList()
+    {
+        Debug.WriteLine("---------CALL UpdateList---------");
+
+        Accounts.Clear();
+        foreach (var item in Bank.GetAccountsInfo())
+        {
+            Accounts.Add(item);
+            Debug.WriteLine("---------UPDATING LIST---------");
+            Debug.WriteLine($"{item.Id} " +
+                            $"{item.FirstName} " +
+                            $"{item.LastName} " +
+                            $"{item.PhoneNumber} " +
+                            $"{item.Passport}");
+        }
+
+        //EnableEditClient = MainVm.Employee.DataAccess.Commands.EditClient && Clients.Count > 0;
     }
 
     #region Current View
@@ -54,14 +89,18 @@ public class MainViewModel : ViewModelBase
 
     #endregion
 
-    #region View fields
+    #region Fields
 
     private AccountsViewModel AccountsVm { get; }
     private SettingsViewModel SettingsVm { get; }
     private NewAccountViewModel NewAccountVm { get; }
     private AboutViewModel AboutVm { get; }
-    public Account Account { get; set; }
+    public AccountsPath AccountsPath { get; }
+    
+    public Repository Repository { get; set; }
+    public ObservableCollection<Account> Accounts { get; set; }
     public Employee Employee { get; set; }
+    public Bank Bank { get; }
 
     #endregion
 

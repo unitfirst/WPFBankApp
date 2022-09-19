@@ -22,7 +22,7 @@ public class Passport : ViewModelBase
 
     public Passport() { }
 
-    public Passport(int passportData)
+    public Passport(long passportData)
     {
         PassportData = passportData;
     }
@@ -40,7 +40,7 @@ public class Passport : ViewModelBase
 
     public static bool IsSeries(string input)
     {
-        if (!long.TryParse(input, out long value))
+        if (!long.TryParse(input, out var value))
             return false;
 
         if (value < MinValue || value > MaxValue)
@@ -49,11 +49,12 @@ public class Passport : ViewModelBase
         }
         return true;
     }
-
+    
     public override string ToString()
     {
         return $"{PassportData}";
     }
+
 
     #endregion
 }
