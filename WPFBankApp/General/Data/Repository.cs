@@ -34,7 +34,6 @@ public class Repository : IRepository
 
     public IEnumerable<Account> GetAllRecords()
     {
-        Debug.WriteLine("---------CALL GetAllRecords---------");
         return Records;
     }
 

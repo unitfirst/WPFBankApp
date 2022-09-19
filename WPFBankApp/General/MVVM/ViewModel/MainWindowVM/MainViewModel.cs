@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Windows.Controls;
 using System.Windows.Input;
 using WPFBankApp.AppFiles.Core.Commands;
 using WPFBankApp.General.Core.Settings;
@@ -35,8 +36,8 @@ public class MainViewModel : ViewModelBase
 
         #region Views
 
-        AccountsVm = new AccountsViewModel(this, Accounts);
-        NewAccountVm = new NewAccountViewModel(this);
+        AccountsVm = new AccountsViewModel(this);
+        NewAccountVm = new NewAccountViewModel();
         SettingsVm = new SettingsViewModel();
         AboutVm = new AboutViewModel();
 
