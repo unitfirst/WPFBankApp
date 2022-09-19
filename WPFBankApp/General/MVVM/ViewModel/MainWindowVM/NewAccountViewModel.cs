@@ -4,8 +4,7 @@ public class NewAccountViewModel
 {
     public MainViewModel MainVm;
 
-    public NewAccountViewModel(MainViewModel mainVm)
+    public NewAccountViewModel()
     {
-        MainVm = mainVm;
     }
 }
