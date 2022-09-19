@@ -2,7 +2,8 @@
 
 public class AccountInfo : Account
 {
-    public string Passport { get; set; }
+    public new string Passport { get; set; }
+    public string PassportToString => Passport;
 
     public AccountInfo() { }
     public AccountInfo(Account account)

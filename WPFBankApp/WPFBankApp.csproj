@@ -35,9 +35,38 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
+        <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+          <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.7.0.0-rc.1.22426.10\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+        </Reference>
+        <Reference Include="mscorlib" />
+        <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+          <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+        </Reference>
         <Reference Include="System" />
+        <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+        </Reference>
         <Reference Include="System.Core" />
         <Reference Include="System.Data" />
+        <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Numerics" />
+        <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Text.Encodings.Web, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Text.Encodings.Web.7.0.0-rc.1.22426.10\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+        </Reference>
+        <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+        </Reference>
         <Reference Include="System.Xml" />
         <Reference Include="System.Xaml">
             <RequiredTargetFramework>4.0</RequiredTargetFramework>
@@ -45,8 +74,8 @@
         <Reference Include="WindowsBase" />
         <Reference Include="PresentationCore" />
         <Reference Include="PresentationFramework" />
-        <Reference Include="WpfAnimatedGif, Version=2.0.0.0, Culture=neutral, PublicKeyToken=9e7cd3b544a090dc, processorArchitecture=MSIL">
-          <HintPath>..\packages\WpfAnimatedGif.2.0.2\lib\net40\WpfAnimatedGif.dll</HintPath>
+        <Reference Include="WpfAnimatedGif, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9e7cd3b544a090dc, processorArchitecture=MSIL">
+          <HintPath>..\packages\WpfAnimatedGif.2.0.1\lib\net40\WpfAnimatedGif.dll</HintPath>
         </Reference>
     </ItemGroup>
     <ItemGroup>
@@ -60,11 +89,16 @@
         <Compile Include="General\Core\Commands\Toolbar\MinimizeWindowCommand.cs" />
         <Compile Include="General\Core\Commands\Toolbar\MoveWindowCommand.cs" />
         <Compile Include="General\Core\Commands\Toolbar\ShutDownCommand.cs" />
+        <Compile Include="General\Core\Settings\Config.cs" />
+        <Compile Include="General\Core\Settings\IConfig.cs" />
+        <Compile Include="General\Core\Settings\Paths\AccountsPath.cs" />
     </ItemGroup>
     <ItemGroup>
         <Compile Include="General\Core\Converters\PassportToString.cs" />
         <Compile Include="General\Core\Converters\PhoneNumberToString.cs" />
         <Compile Include="General\Core\Converters\UserModeToString.cs" />
+        <Compile Include="General\Data\Interface\IRepository.cs" />
+        <Compile Include="General\Data\Repository.cs" />
         <Compile Include="General\MVVM\Model\Access\AccessValidator.cs" />
         <Compile Include="General\MVVM\Model\Access\Parameters\CommandAccess.cs" />
         <Compile Include="General\MVVM\Model\Access\Parameters\EditAccess.cs" />
@@ -102,6 +136,7 @@
         <Compile Include="General\MVVM\View\MainWindowView\Views\SettingsView.xaml.cs">
           <DependentUpon>SettingsView.xaml</DependentUpon>
         </Compile>
+        <Compile Include="General\Service\Bank.cs" />
         <Compile Include="General\Styles\Resources\Extensions.cs" />
         <Compile Include="Properties\AssemblyInfo.cs">
             <SubType>Code</SubType>

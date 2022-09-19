@@ -4,13 +4,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:c="clr-namespace:WPFBankApp.General.Core.Converters"
+             xmlns:vm="clr-namespace:WPFBankApp.General.MVVM.ViewModel.MainWindowVM"
              mc:Ignorable="d"
              d:DesignHeight="450"
              d:DesignWidth="800"
              Background="{StaticResource Color.Main.Onyx.Dark}">
+    <UserControl.DataContext>
+        <vm:AccountsViewModel />
+    </UserControl.DataContext>
     <UserControl.Resources>
         <c:PhoneNumberToString x:Key="PhoneNumberToStringConvertor"></c:PhoneNumberToString>
-        <c:PassportDataToString x:Key="PassportDataToStringConvertor"></c:PassportDataToString>
+        <c:PassportToString x:Key="PassportToStringConvertor"></c:PassportToString>
     </UserControl.Resources>
     
     <Grid>
@@ -40,7 +44,8 @@
 
         </StackPanel>
 
-        <Grid Grid.Row="2"
+        <Grid Grid.Row="2" 
+              Grid.Column="0"
               Margin="40 0 40 0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2.5*" />
@@ -52,7 +57,7 @@
                     Background="{DynamicResource Color.DataGrid.Static.Background}"
                     CornerRadius="5" />
 
-            <DataGrid x:Name="DgAccounts"
+            <DataGrid Grid.Column="0" 
                       ItemsSource="{Binding Accounts}"
                       SelectedItem="{Binding SelectedAccount}"
                       ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle}"
@@ -62,54 +67,47 @@
                       ScrollViewer.VerticalScrollBarVisibility="Auto">
 
                 <DataGrid.Columns>
-                    <DataGridTextColumn x:Name="AddTimeCol"
-                                        Visibility="Collapsed"
+                    <DataGridTextColumn Visibility="Collapsed"
                                         Header="Added"
                                         Width="100*"
                                         MinWidth="100"
                                         CanUserSort="True" />
 
-                    <DataGridTextColumn x:Name="LastUpdateCol"
-                                        Visibility="Collapsed"
+                    <DataGridTextColumn Visibility="Collapsed"
                                         Header="Edited"
                                         Width="100*"
                                         MinWidth="100"
                                         IsReadOnly="True" />
 
-                    <DataGridTextColumn x:Name="IdCol"
-                                        Header="ID"
+                    <DataGridTextColumn Header="ID"
                                         Width="60*"
                                         MinWidth="60"
                                         IsReadOnly="True"
                                         CanUserSort="True"
-                                        Binding="{Binding Id}" />
+                                        Binding="{Binding Path=Id}" />
 
-                    <DataGridTextColumn x:Name="FirstNameCol"
-                                        Header="First name"
+                    <DataGridTextColumn Header="First name"
                                         Width="180*"
                                         MinWidth="180"
                                         IsReadOnly="True"
                                         CanUserSort="True"
                                         Binding="{Binding FirstName}" />
 
-                    <DataGridTextColumn x:Name="LastNameCol"
-                                        Header="Last name"
+                    <DataGridTextColumn Header="Last name"
                                         Width="180*"
                                         MinWidth="180"
                                         IsReadOnly="True"
                                         CanUserSort="True"
                                         Binding="{Binding LastName}" />
 
-                    <DataGridTextColumn x:Name="PhoneCol"
-                                        Header="Phone"
+                    <DataGridTextColumn Header="Phone"
                                         Width="100*"
                                         MinWidth="100"
                                         IsReadOnly="True"
                                         CanUserSort="True"
                                         Binding="{Binding PhoneNumber}" />
 
-                    <DataGridTextColumn x:Name="PassportCol"
-                                        Header="Passport"
+                    <DataGridTextColumn Header="Passport"
                                         Width="100*"
                                         MinWidth="100"
                                         IsReadOnly="True"
@@ -132,19 +130,19 @@
                     <TextBlock Style="{StaticResource SubTitle.Style}"
                                Text="First name" />
                     <TextBox Style="{StaticResource TextBox.Default.Style}"
-                             x:Name="tbFirstName"
-                             Text="{Binding SelectedAccount.FirstName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+                             Text="{Binding SelectedAccount.FirstName, 
+                             UpdateSourceTrigger=PropertyChanged, 
+                             Mode=TwoWay}" />
 
                     <TextBlock Style="{StaticResource SubTitle.Style}"
                                Text="Last name" />
                     <TextBox Style="{StaticResource TextBox.Default.Style}"
-                             x:Name="tbLastName"
-                             Text="{Binding SelectedAccount.LastName, UpdateSourceTrigger=PropertyChanged}" />
+                             Text="{Binding SelectedAccount.LastName, 
+                             UpdateSourceTrigger=PropertyChanged}" />
 
                     <TextBlock Style="{StaticResource SubTitle.Style}"
                                Text="Phone number" />
                     <TextBox Style="{StaticResource TextBox.Default.Style}"
-                             x:Name="tbPhoneNumber"
                              Text="{Binding SelectedAccount.PhoneNumber, 
                              UpdateSourceTrigger=PropertyChanged, 
                              Mode=OneWay, 
@@ -153,11 +151,10 @@
                     <TextBlock Style="{StaticResource SubTitle.Style}"
                                Text="Passport" />
                     <TextBox Style="{StaticResource TextBox.Default.Style}"
-                             x:Name="tbPassport"
                              Text="{Binding SelectedAccount.Passport, 
                              UpdateSourceTrigger=PropertyChanged, 
                              Mode=OneWay, 
-                             Converter={StaticResource PassportDataToStringConvertor}}"/>
+                             Converter={StaticResource PassportToStringConvertor}}"/>
 
                     <StackPanel Orientation="Horizontal"
                                 VerticalAlignment="Bottom"
@@ -167,14 +164,14 @@
                         <Button x:Name="ApplyButton"
                                 Style="{StaticResource Button.Default.Style}"
                                 Content="Apply"
-                                Command="{Binding ApplyCommand}"
+                                Command="{Binding UpdateAccountCommand}"
                                 CommandParameter="{Binding SelectedAccount}" />
 
 
                         <Button x:Name="DeleteButton"
                                 Style="{StaticResource Button.Delete.Style}"
                                 Content="🚫 Delete account"
-                                Command="{Binding RemoveCommand}"
+                                Command="{Binding RemoveAccountCommand}"
                                 CommandParameter="{Binding SelectedAccount}" />
                     </StackPanel>
                 </StackPanel>

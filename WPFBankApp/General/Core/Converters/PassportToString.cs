@@ -5,7 +5,7 @@ using WPFBankApp.General.MVVM.Model.Accounts.ProtectedData;
 
 namespace WPFBankApp.General.Core.Converters;
 
-public class PassportDataToString : IValueConverter
+public class PassportToString : IValueConverter
 {
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {

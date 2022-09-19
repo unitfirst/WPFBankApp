@@ -1,5 +1,7 @@
 ﻿using System.Windows.Controls;
+using WPFBankApp.General.MVVM.Model.Employees.Base;
 using WPFBankApp.General.MVVM.ViewModel.MainWindowVM;
+using WPFBankApp.General.Service;
 
 namespace WPFBankApp.General.MVVM.View.MainWindowView.Views;
 
