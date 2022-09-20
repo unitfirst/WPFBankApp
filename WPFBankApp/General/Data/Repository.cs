@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Newtonsoft.Json;
 using WPFBankApp.General.Data.Interface;
 using WPFBankApp.General.MVVM.Model.Accounts;
@@ -12,6 +13,7 @@ namespace WPFBankApp.General.Data;
 public class Repository : IRepository
 {
     private readonly string _path;
+    private List<Account> _records;
 
     public Repository(string path)
     {
@@ -50,7 +52,12 @@ public class Repository : IRepository
 
     public void DeleteRecord(int id)
     {
-        throw new NotImplementedException();
+        if (Records.Any(a => a.Id == id))
+        {
+            Records.Remove(Records.FirstOrDefault(a => a.Id == id));
+        }
+
+        SaveFile(_path);
     }
 
     public void UpdateRecord(Account account)
