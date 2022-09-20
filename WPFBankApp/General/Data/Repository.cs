@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using Newtonsoft.Json;
 using WPFBankApp.General.Data.Interface;
@@ -85,7 +84,7 @@ public class Repository : IRepository
 
                 return Records;
             }
-            
+
             return Records;
         }
     }
