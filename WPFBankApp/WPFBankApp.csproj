@@ -114,6 +114,7 @@
         <Compile Include="General\MVVM\ViewModel\LoginWindowVM\LoginViewModel.cs" />
         <Compile Include="General\MVVM\ViewModel\MainWindowVM\AboutViewModel.cs" />
         <Compile Include="General\MVVM\ViewModel\MainWindowVM\AccountsViewModel.cs" />
+        <Compile Include="General\MVVM\ViewModel\MainWindowVM\EditAccountViewModel.cs" />
         <Compile Include="General\MVVM\ViewModel\MainWindowVM\MainViewModel.cs" />
         <Compile Include="General\MVVM\ViewModel\MainWindowVM\NewAccountViewModel.cs" />
         <Compile Include="General\MVVM\ViewModel\MainWindowVM\SettingsViewModel.cs" />
@@ -129,6 +130,9 @@
         </Compile>
         <Compile Include="General\MVVM\View\MainWindowView\Views\AccountsView.xaml.cs">
           <DependentUpon>AccountsView.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="General\MVVM\View\MainWindowView\Views\EditAccountView.xaml.cs">
+          <DependentUpon>EditAccountView.xaml</DependentUpon>
         </Compile>
         <Compile Include="General\MVVM\View\MainWindowView\Views\NewAccountView.xaml.cs">
           <DependentUpon>NewAccountView.xaml</DependentUpon>
@@ -165,6 +169,7 @@
       </Page>
       <Page Include="General\MVVM\View\MainWindowView\Views\AboutView.xaml" />
       <Page Include="General\MVVM\View\MainWindowView\Views\AccountsView.xaml" />
+      <Page Include="General\MVVM\View\MainWindowView\Views\EditAccountView.xaml" />
       <Page Include="General\MVVM\View\MainWindowView\Views\NewAccountView.xaml" />
       <Page Include="General\MVVM\View\MainWindowView\Views\SettingsView.xaml" />
       <Page Include="General\Styles\Resources\Icons.xaml" />
