@@ -7,15 +7,18 @@ namespace WPFBankApp.General.Core.Settings;
 public class Config : IConfig
 {
     private readonly string _path;
+    public readonly string BankName;
 
     public Config()
     {
+        BankName = "niBank v2.0";
         _path = @"config.json";
     }
 
-    public Config(string path)
+    public Config(string path, string bankName)
     {
         _path = path;
+        BankName = bankName;
     }
 
     public AccountsPath Load()

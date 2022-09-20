@@ -49,7 +49,7 @@
                     <ColumnDefinition Width="100"/>
                 </Grid.ColumnDefinitions>
 
-                <TextBlock Text="niBank"
+                <TextBlock Text="{Binding Bank.Name }"
                            Foreground="LightGray"
                            FontFamily="Montserrat"
                            VerticalAlignment="Center"

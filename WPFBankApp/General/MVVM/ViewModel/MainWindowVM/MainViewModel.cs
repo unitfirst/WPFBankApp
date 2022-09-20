@@ -25,10 +25,11 @@ public class MainViewModel : ViewModelBase
 
     public MainViewModel(Employee employee)
     {
-        Config = new Config();
-        AccountsPath = Config.Load();
+        var config = new Config();
+        AccountsPath = config.Load();
+        
         Employee = employee;
-        Bank = new Bank("niBank", new Repository(AccountsPath.FilePath), employee);
+        Bank = new Bank(config.BankName, new Repository(AccountsPath.FilePath), employee);
         
         Accounts = new ObservableCollection<Account>();
 
