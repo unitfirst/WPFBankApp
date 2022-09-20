@@ -37,6 +37,14 @@ public class AccountsViewModel : ViewModelBase
         //EnableEditClient = MainVm.Employee.DataAccess.Commands.EditClient && Clients.Count > 0;
     }
 
+    public void BindingValues()
+    {
+        _firstNameToBinding = SelectedAccount.FirstName ?? string.Empty;
+        _lastNameToBinding = SelectedAccount.LastName ?? string.Empty;
+        _phoneNumberToBinding = SelectedAccount.PhoneNumber.ToString();
+        _passportToBinding = SelectedAccount.Passport ?? string.Empty;
+    }
+
     #region Selected
 
     #region SelectedAccount
@@ -113,6 +121,58 @@ public class AccountsViewModel : ViewModelBase
     private bool CanUpdateAccountCommandExecute(object p)
     {
         return true;
+    }
+
+    #endregion
+
+    #endregion
+
+    #region AccountToBinding
+
+    #region FirstNameToBinding
+
+    private string _firstNameToBinding;
+
+    public string FirstNameToBinding
+    {
+        get => _firstNameToBinding;
+        set => Set(ref _firstNameToBinding, value);
+    }
+
+    #endregion
+
+    #region LastNameToBinding
+
+    private string _lastNameToBinding;
+
+    public string LastNameToBinding
+    {
+        get => _lastNameToBinding;
+        set => Set(ref _lastNameToBinding, value);
+    }
+
+    #endregion
+
+    #region PhoneNumberToBinding
+
+    private string _phoneNumberToBinding;
+
+    public string PhoneNumberToBinding
+    {
+        get => _phoneNumberToBinding;
+        set => Set(ref _phoneNumberToBinding, value);
+    }
+
+    #endregion
+
+    #region PassportToBindig
+
+    private string _passportToBinding;
+
+    public string PassportToBinding
+    {
+        get => _passportToBinding;
+        set => Set(ref _passportToBinding, value);
     }
 
     #endregion

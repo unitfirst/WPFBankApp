@@ -130,20 +130,20 @@
                     <TextBlock Style="{StaticResource SubTitle.Style}"
                                Text="First name" />
                     <TextBox Style="{StaticResource TextBox.Default.Style}"
-                             Text="{Binding SelectedAccount.FirstName, 
+                             Text="{Binding FirstNameToBinding, 
                              UpdateSourceTrigger=PropertyChanged, 
                              Mode=TwoWay}" />
 
                     <TextBlock Style="{StaticResource SubTitle.Style}"
                                Text="Last name" />
                     <TextBox Style="{StaticResource TextBox.Default.Style}"
-                             Text="{Binding SelectedAccount.LastName, 
+                             Text="{Binding LastNameToBinding, 
                              UpdateSourceTrigger=PropertyChanged}" />
 
                     <TextBlock Style="{StaticResource SubTitle.Style}"
                                Text="Phone number" />
                     <TextBox Style="{StaticResource TextBox.Default.Style}"
-                             Text="{Binding SelectedAccount.PhoneNumber, 
+                             Text="{Binding PhoneNumberToBinding, 
                              UpdateSourceTrigger=PropertyChanged, 
                              Mode=OneWay, 
                              Converter={StaticResource PhoneNumberToStringConvertor}}"/>
@@ -151,7 +151,7 @@
                     <TextBlock Style="{StaticResource SubTitle.Style}"
                                Text="Passport" />
                     <TextBox Style="{StaticResource TextBox.Default.Style}"
-                             Text="{Binding SelectedAccount.Passport, 
+                             Text="{Binding PassportToBinding, 
                              UpdateSourceTrigger=PropertyChanged, 
                              Mode=OneWay, 
                              Converter={StaticResource PassportToStringConvertor}}"/>
