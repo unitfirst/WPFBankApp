@@ -31,7 +31,8 @@
                 <ColumnDefinition Width="0.6*" />
             </Grid.ColumnDefinitions>
 
-            <Ellipse Grid.Row="0"
+            <!-- Animated hand (did not work...) -->
+            <!--<Ellipse Grid.Row="0"
                      VerticalAlignment="Top"
                      HorizontalAlignment="Left"
                      Width="100"
@@ -47,7 +48,7 @@
                    VerticalAlignment="Top"
                    HorizontalAlignment="Left"
                    gif:ImageBehavior.AnimatedSource="Media/w-hand.gif"
-                   gif:ImageBehavior.RepeatBehavior="2x" />
+                   gif:ImageBehavior.RepeatBehavior="2x" />-->
 
             <StackPanel Grid.Row="1" Grid.Column="0"
                         Orientation="Vertical"
@@ -88,5 +89,4 @@
 
         </Grid>
     </Grid>
-
 </UserControl>
