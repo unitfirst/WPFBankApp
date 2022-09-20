@@ -47,7 +47,10 @@ public class Repository : IRepository
 
     public void AddRecord(Account account)
     {
-        throw new NotImplementedException();
+        if(account is null)
+            return;
+        Records.Add(account);   
+        SaveFile(_path);
     }
 
     public void DeleteRecord(int id)
