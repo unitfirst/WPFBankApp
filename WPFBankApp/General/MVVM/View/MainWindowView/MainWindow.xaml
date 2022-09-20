@@ -4,15 +4,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:extensions="clr-namespace:WPFBankApp.General.Styles.Resources" 
+        xmlns:extensions="clr-namespace:WPFBankApp.General.Styles.Resources"
         xmlns:toolbar="clr-namespace:WPFBankApp.General.Core.Commands.Toolbar"
         xmlns:converter="clr-namespace:WPFBankApp.General.Core.Converters"
         xmlns:viewmodel="clr-namespace:WPFBankApp.General.MVVM.ViewModel.MainWindowVM"
         mc:Ignorable="d"
-        Title="MainWindow" 
-        Height="700" 
+        Title="MainWindow"
+        Height="700"
         Width="1440"
-        MinHeight="600" 
+        MinHeight="600"
         MinWidth="900"
         WindowStyle="None"
         Background="Transparent"
@@ -20,15 +20,15 @@
         ResizeMode="CanResizeWithGrip">
 
     <Window.DataContext>
-        <viewmodel:MainViewModel/>
+        <viewmodel:MainViewModel />
     </Window.DataContext>
 
     <Window.Resources>
-        <toolbar:MinimizeWindowCommand x:Key="MinimizeWindowCommand"/>
-        <toolbar:MaximizeWindowCommand x:Key="MaximizeWindowCommand"/>
-        <toolbar:ShutDownCommand x:Key="ShutDownCommand"/>
-        <toolbar:MoveWindowCommand x:Key="MoveWindowCommand"/>
-        <converter:UserModeToString x:Key="UserModeToString"></converter:UserModeToString>
+        <toolbar:MinimizeWindowCommand x:Key="MinimizeWindowCommand" />
+        <toolbar:MaximizeWindowCommand x:Key="MaximizeWindowCommand" />
+        <toolbar:ShutDownCommand x:Key="ShutDownCommand" />
+        <toolbar:MoveWindowCommand x:Key="MoveWindowCommand" />
+        <converter:UserModeToString x:Key="UserModeToString" />
     </Window.Resources>
 
     <DockPanel Background="Transparent"
@@ -40,13 +40,13 @@
 
             <Border.InputBindings>
                 <MouseBinding MouseAction="LeftClick"
-                              Command="{StaticResource MoveWindowCommand}"/>
+                              Command="{StaticResource MoveWindowCommand}" />
             </Border.InputBindings>
 
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="100" />
                 </Grid.ColumnDefinitions>
 
                 <TextBlock Text="{Binding Bank.Name }"
@@ -54,7 +54,7 @@
                            FontFamily="Montserrat"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Left"
-                           Margin="15 0 0 0"/>
+                           Margin="15 0 0 0" />
 
                 <StackPanel Grid.Column="1"
                             Orientation="Horizontal"
@@ -63,27 +63,27 @@
 
                     <Button Padding="0 0 0 2"
                             Content="—"
-                            Command="{StaticResource MinimizeWindowCommand}"/>
+                            Command="{StaticResource MinimizeWindowCommand}" />
 
                     <Button Padding="0 0 0 3"
                             Content="🗖"
-                            Command="{StaticResource MaximizeWindowCommand}"/>
+                            Command="{StaticResource MaximizeWindowCommand}" />
 
                     <Button Padding="0 0 0 2"
                             Content="✕"
-                            Command="{StaticResource ShutDownCommand}"/>
+                            Command="{StaticResource ShutDownCommand}" />
                 </StackPanel>
 
             </Grid>
 
         </Border>
-        
+
         <Border Height="1"
                 Margin="0 -1 0 0"
                 DockPanel.Dock="Top"
-                Background="{StaticResource Color.Main.Onyx.Darkest}"/>
+                Background="{StaticResource Color.Main.Onyx.Darkest}" />
 
-        <Border Margin="0 -1 0 0" 
+        <Border Margin="0 -1 0 0"
                 Width="60"
                 DockPanel.Dock="Left"
                 Background="{StaticResource Color.Main.Onyx.Default}"
@@ -99,7 +99,7 @@
                                     <Storyboard>
                                         <DoubleAnimation Storyboard.TargetProperty="(Border.Width)"
                                                          To="160"
-                                                         Duration="0:0:.1"/>
+                                                         Duration="0:0:.1" />
                                     </Storyboard>
                                 </BeginStoryboard>
                             </EventTrigger.Actions>
@@ -111,7 +111,7 @@
                                     <Storyboard>
                                         <DoubleAnimation Storyboard.TargetProperty="(Border.Width)"
                                                          To="60"
-                                                         Duration="0:0:.1"/>
+                                                         Duration="0:0:.1" />
                                     </Storyboard>
                                 </BeginStoryboard>
                             </EventTrigger.Actions>
@@ -124,28 +124,27 @@
                 <RadioButton Command="{Binding ShowAccountsView}"
                              Content="Accounts"
                              extensions:Extensions.Icon="📖"
-                             IsChecked="True">
-                </RadioButton>
+                             IsChecked="True" />
 
                 <RadioButton Command="{Binding ShowNewAccountView}"
                              Content="New account"
-                             extensions:Extensions.Icon="➕"/>
+                             extensions:Extensions.Icon="➕" />
 
                 <RadioButton Command="{Binding ShowSettingsView}"
                              Content="Settings"
-                             extensions:Extensions.Icon="⚙️"/>
+                             extensions:Extensions.Icon="⚙️" />
 
                 <RadioButton Command="{Binding ShowAboutView}"
                              Content="About"
-                             extensions:Extensions.Icon="🤚"/>
+                             extensions:Extensions.Icon="🤚" />
             </StackPanel>
         </Border>
-        
+
         <Border Width="1"
                 Margin="-1 0"
-                Background="{StaticResource Color.Main.Onyx.Darkest}"/>
+                Background="{StaticResource Color.Main.Onyx.Darkest}" />
 
-        <Border Margin="0 -1" 
+        <Border Margin="0 -1"
                 Height="40"
                 Background="{StaticResource Color.Main.Onyx.Dark}"
                 DockPanel.Dock="Top">
@@ -153,27 +152,27 @@
                         Margin="20 0"
                         VerticalAlignment="Center"
                         HorizontalAlignment="Right">
-                <TextBlock Text="Now working:" 
+                <TextBlock Text="Now working:"
                            Margin="0 1 10 0"
                            FontSize="10"
                            Foreground="{StaticResource Color.Main.Onyx.Light}"
-                           VerticalAlignment="Center"/>                     
-                
+                           VerticalAlignment="Center" />
+
                 <TextBlock Text="{Binding Employee, Converter={StaticResource UserModeToString}}"
                            FontSize="13"
                            FontWeight="Light"
                            Foreground="{StaticResource Color.Main.Yellow.Light}"
                            Opacity="0.9"
-                           VerticalAlignment="Center"/>
+                           VerticalAlignment="Center" />
             </StackPanel>
         </Border>
 
         <Border Height="2"
                 Margin="0 -1"
                 DockPanel.Dock="Top"
-                Background="{StaticResource Color.Main.Onyx.Light}"/>
+                Background="{StaticResource Color.Main.Onyx.Light}" />
 
-        <ContentPresenter Margin="0 -1 0 0" 
-                          Content="{Binding CurrentView}"/>
+        <ContentPresenter Margin="0 -1 0 0"
+                          Content="{Binding CurrentView}" />
     </DockPanel>
 </Window>
