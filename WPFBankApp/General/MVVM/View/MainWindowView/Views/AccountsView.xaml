@@ -9,9 +9,9 @@
              d:DesignHeight="450"
              d:DesignWidth="800"
              Background="{StaticResource Color.Main.Onyx.Dark}">
-    <UserControl.DataContext>
+    <d:UserControl.DataContext>
         <vm:AccountsViewModel />
-    </UserControl.DataContext>
+    </d:UserControl.DataContext>
     <UserControl.Resources>
         <c:PhoneNumberToString x:Key="PhoneNumberToStringConvertor"></c:PhoneNumberToString>
         <c:PassportToString x:Key="PassportToStringConvertor"></c:PassportToString>
