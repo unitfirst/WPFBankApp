@@ -7,7 +7,7 @@ public interface IRepository : IEnumerable<Account>
 {
     public int Count { get; }
 
-    void InsertRecord(Account account);
+    void AddRecord(Account account);
 
     void DeleteRecord(int id);
 

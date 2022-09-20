@@ -13,7 +13,7 @@ namespace WPFBankApp.General.Data;
 public class Repository : IRepository
 {
     private readonly string _path;
-    private List<Account> _records;
+    //private List<Account> _records;
 
     public Repository(string path)
     {
@@ -45,7 +45,7 @@ public class Repository : IRepository
         throw new NotImplementedException();
     }
 
-    public void InsertRecord(Account account)
+    public void AddRecord(Account account)
     {
         throw new NotImplementedException();
     }
@@ -62,7 +62,8 @@ public class Repository : IRepository
 
     public void UpdateRecord(Account account)
     {
-        throw new NotImplementedException();
+        Records[Records.IndexOf(Records.First(a=>a.Id == account.Id))] = account;
+        SaveFile(_path);
     }
 
     public void ClearAllRecords()
@@ -85,9 +86,11 @@ public class Repository : IRepository
         using (var reader = new StreamReader(_path))
         {
             Records = JsonConvert.DeserializeObject<List<Account>>(reader.ReadToEnd());
+            
             if (string.IsNullOrEmpty(_path) || Records is null)
             {
                 AddTestRecord();
+                SaveFile(_path);
 
                 return Records;
             }
